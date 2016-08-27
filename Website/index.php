@@ -287,7 +287,7 @@ else {
 </form>
 <h1>Dev Blog</h1>
 <?php
-include_once('devBlog/16_08_2016.html');
+include_once('devBlog/25_08_2016.html');
 if (isset($_GET['r'])) {
 	$referralID = mysql_real_escape_string(trim(strip_tags($_GET['r'])));
 	if (mb_strlen($referralID) == 32) {

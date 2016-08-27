@@ -30,6 +30,17 @@ class EmblemController {
         return $result;
 	}
 
+    public static function countUnconfirmedEmblems() {
+        $sql = "SELECT COUNT(*) FROM " . CONFIG_TABLE_PREFIX . "emblems WHERE confirmed = 0";
+        $result = DB::query($sql, FALSE);
+        $count = mysql_result($result, 0);
+        if (!$result) {
+            //TODO:: Error log
+        }
+
+        return $count;
+    }
+
     public static function handleConfirm($confirm, $ids) {		
 		if($confirm == 'true') {
             $sql = "UPDATE ". CONFIG_TABLE_PREFIX . "emblems SET confirmed = 1 WHERE team = '" . $ids . "'";

@@ -7,6 +7,7 @@ function noDemoPopup() {
 </script>
 </head>
 <?php
+require_once 'controller/emblemController.php';
 if (isset($_GET['via_android'])) {
     if ($_GET['via_android'] == 1) {
         $_SESSION['via_android'] = 1;
@@ -236,7 +237,7 @@ if ($_SESSION['status'] == 'Helfer' || $_SESSION['status'] == 'Admin') { // fuer
 	echo '<a href="/neueAccounts.php">'._('Neue Accounts').'</a>';
 	echo '<a href="/gruendeFuerLoeschung.php">'._('Gründe für Löschung').'</a>';
 	echo '<a href="/sanktionen.php">'._('Kontrollzentrum').'</a>';
-	echo '<a href="/confirmEmblems.php">'._('Wappen bestätigen').'</a>';
+	echo '<a href="/confirmEmblems.php">'._('Wappen bestätigen').' <span class="badge">'.EmblemController::countUnconfirmedEmblems().'</span></a>';
 	echo '</div>';
 }
 
