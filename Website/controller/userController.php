@@ -15,6 +15,17 @@ class UserController {
         return self::createManagerLink($result->username, $result->ids);
 	}
 
+    public static function getIdsByTeamIds($ids) {		
+		$sql = "SELECT ids FROM " . CONFIG_TABLE_PREFIX . "users WHERE team = '" . $ids . "'";
+        $result = DB::query($sql, FALSE);
+        $result = mysql_fetch_object($result);
+        if (!$result) {
+            //TODO:: Error log
+        }
+
+        return $result->ids;
+	}
+
     private static function createManagerLink($username, $ids) {
         if (substr($username, 0, 9) == 'GELOESCHT') {
             return 'Gelöschter User';

@@ -1,6 +1,8 @@
 <?php
 
 require_once '/../utils/database.php';
+require_once '/messageController.php';
+require_once '/userController.php';
 
 class EmblemController {
 	
@@ -49,6 +51,8 @@ class EmblemController {
             $sql = "DELETE FROM ". CONFIG_TABLE_PREFIX . "emblems WHERE team = '" . $ids . "'";
             DB::query($sql, TRUE);
             unlink(realpath(dirname(__FILE__)) . '/../images/emblems/' . $ids . '.png');
+            $msg = __('Dein Wappen entsprach nicht den <a href="/regeln.php">Regeln</a> und wurde daher gelöscht. Bitte schaue nochmal in den <a href="/regeln.php">Regeln</a> nach was erlaubt ist und was nicht.');
+            MessageController::addOfficialPn(UserController::getIdsByTeamIds($ids), __('Wappen nicht freigegeben'), $msg);
         }
 	}
 
