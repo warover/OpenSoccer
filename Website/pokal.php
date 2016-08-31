@@ -1,4 +1,7 @@
-<?php include 'zz1.php'; ?>
+<?php 
+include 'zz1.php';
+require_once 'controller/emblemController.php';
+?>
 <title><?php echo _('Internationaler Pokal'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
 <?php
 // LAENDER HOLEN ANFANG
@@ -173,7 +176,7 @@ for ($i = 1; $i <= 6; $i++) {
 	$tmp_liga_cache .= '<h1>'.$spiels['key'].'</h1>';
 	$tmp_liga_cache .= '<p><table><thead><tr class="odd"><th scope="col">'._('Team 1').'</th><th scope="col">&nbsp;</th><th scope="col">'._('Team 2').'</th><th scope="col">&nbsp;</th><th scope="col">'._('H').'</th><th scope="col">'._('R').'</th></tr></thead><tbody>';
 	foreach ($spielliste as $spiel) {
-		$tmp_liga_cache .= '<tr class="land_'.$laender[$team_ids[$spiel['team1']][1]].' land_'.$laender[$team_ids[$spiel['team2']][1]].'"><td class="link"><a href="/team.php?id='.$team_ids[$spiel['team1']][0].'">'.$spiel['team1'].'</a></td><td><img src="/images/flaggen/'.$laender[$team_ids[$spiel['team1']][1]].'.png" alt="" /></td><td class="link"><a href="/team.php?id='.$team_ids[$spiel['team2']][0].'">'.$spiel['team2'].'</a></td><td><img src="/images/flaggen/'.$laender[$team_ids[$spiel['team2']][1]].'.png" alt="" /></td><td class="link">'.$spiel['ergebnis1'].'</td><td class="link">'.$spiel['ergebnis2'].'</td></tr>';
+		$tmp_liga_cache .= '<tr class="land_'.$laender[$team_ids[$spiel['team1']][1]].' land_'.$laender[$team_ids[$spiel['team2']][1]].'"><td class="link"><a href="/team.php?id='.$team_ids[$spiel['team1']][0].'"><img class="emblem-small" src="/images/emblems/'.EmblemController::getEmblemByTeamIds($team_ids[$spiel['team1']][0]).'" />'.$spiel['team1'].'</a></td><td><img src="/images/flaggen/'.$laender[$team_ids[$spiel['team1']][1]].'.png" alt="" /></td><td class="link"><a href="/team.php?id='.$team_ids[$spiel['team2']][0].'"><img class="emblem-small" src="/images/emblems/'.EmblemController::getEmblemByTeamIds($team_ids[$spiel['team2']][0]).'" />'.$spiel['team2'].'</a></td><td><img src="/images/flaggen/'.$laender[$team_ids[$spiel['team2']][1]].'.png" alt="" /></td><td class="link">'.$spiel['ergebnis1'].'</td><td class="link">'.$spiel['ergebnis2'].'</td></tr>';
 	}
 	$tmp_liga_cache .= '</tbody></table></p>';
 	$tmp_liga_cache .= '<p><strong>'._('Hinweis:').'</strong> '._('Spiele mit Beteiligung aus dem eigenen Land werden grau hinterlegt.').'</p>';
