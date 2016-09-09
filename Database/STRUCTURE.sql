@@ -193,7 +193,7 @@ CREATE TABLE `man_cronjobs` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 CREATE TABLE `man_cupsieger` (
-  `saison` tinyint(1) NOT NULL,
+  `saison` int(11) NOT NULL,
   `land` varchar(255) NOT NULL,
   `sieger` varchar(255) NOT NULL,
   `finalgegner` varchar(255) NOT NULL,
@@ -479,7 +479,7 @@ CREATE TABLE `man_pn` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 CREATE TABLE `man_pokalsieger` (
-  `saison` tinyint(1) NOT NULL,
+  `saison` int(11) NOT NULL,
   `sieger` varchar(255) NOT NULL,
   `finalgegner` varchar(255) NOT NULL,
   PRIMARY KEY (`saison`),
