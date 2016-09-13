@@ -139,7 +139,7 @@ if ($sql3['meisterschaften'] > 0 OR $sql3['pokalsiege'] > 0 OR $sql3['cupsiege']
 </thead>
 <tbody>
 <?php
-$sql4 = "SELECT ids, position, vorname, nachname, wiealt, staerke, talent, frische, verletzung, transfermarkt, marktwert FROM ".$prefix."spieler WHERE team = '".$clearid."' ORDER BY position DESC";
+$sql4 = "SELECT ids, position, vorname, nachname, wiealt, staerke, talent, frische, verletzung, transfermarkt, marktwert FROM ".$prefix."spieler WHERE team = '".$clearid."' ORDER BY position = 'S', position = 'M', position = 'A', position = 'T'";
 $sql5 = mysql_query($sql4);
 $counter = 0;
 $durchschnittsAlterWerte = array();
