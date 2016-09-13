@@ -174,6 +174,27 @@ class ComputerManager {
         } else if ($strikerCount < self::MAX_PLAYER_S) {
             $this->setPosToSearch($teamIds, "S");
         }
+        
+        $avgTalentT = $this->getAvgByPos($teamIds, "T");
+        $avgTalentS = $this->getAvgByPos($teamIds, "S");
+        $avgTalentA = $this->getAvgByPos($teamIds, "A");
+        $avgTalentM = $this->getAvgByPos($teamIds, "M");
+        
+        if($avgTalentT < min([$avgTalentS, $avgTalentA, $avgTalentM])) {
+            $this->setPosToSearch($teamIds, "T");
+        } else if ($avgTalentS < min([$avgTalentA, $avgTalentM])) {
+            $this->setPosToSearch($teamIds, "S");
+        } else if($avgTalentA < $avgTalentM) {
+            $this->setPosToSearch($teamIds, "A");
+        } else {
+            $this->setPosToSearch($teamIds, "M");
+        }
+    }
+    
+    private function getAvgByPos($teamIds, $pos) {
+        $sql = "SELECT AVG(talent) FROM " . CONFIG_TABLE_PREFIX."spieler WHERE team = '".$teamIds."' AND position = '" . $pos ."'";
+        $result =  DB::query($sql, false);
+        return mysql_result($result, 0);
     }
 
     private function setPosToSearch($teamIds, $pos) {
