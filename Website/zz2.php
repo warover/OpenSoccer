@@ -273,7 +273,6 @@ if (!isset($_SESSION['via_android'])) {
                             <li><a href="/wio.php#teamList"><?php echo _('Post ans Team'); ?></a></li>
                             <li><a href="/tipps_des_tages.php"><?php echo _('Kurztipps'); ?></a></li>
                             <li><a href="/regeln.php"><?php echo _('Regeln'); ?></a></li>
-    <?php if ($_SESSION['status'] == 'Helfer' || $_SESSION['status'] == 'Admin') { ?><li><a href="/forum.php"><?php echo _('Archiv'); ?></a></li><?php } ?>
                         </ul>
                     </li>
                     <li class="menueintrag"><a href="/<?php
