@@ -181,6 +181,20 @@ CREATE TABLE `man_compensations` (
   KEY `zeit` (`zeit`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
+CREATE TABLE `man_computer_monitoring` (
+  `date` date NOT NULL,
+  `team` varchar(45) NOT NULL,
+  `anz_player` tinyint(1) NOT NULL,
+  `anz_player_t` tinyint(1) NOT NULL,
+  `anz_player_s` tinyint(1) NOT NULL,
+  `anz_player_m` tinyint(1) NOT NULL,
+  `anz_player_a` tinyint(1) NOT NULL,
+  `avg_talent` double NOT NULL,
+  `avg_staerke` double NOT NULL,
+  `avg_aufstellung` double NOT NULL,
+  PRIMARY KEY (`date`,`team`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE `man_cronjobs` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `datei` varchar(255) NOT NULL,

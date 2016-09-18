@@ -323,6 +323,13 @@ if (!isset($_SESSION['via_android'])) {
                             <a href="/manager.php?id=<?php echo $cookie_id; ?>" class="green"><?php echo _('Mein Profil'); ?></a>
                         </div>
                         <?php
+                        if ($_SESSION['status'] == 'Admin') {
+                            echo '<h1>' . _('Admin-Menü') . '</h1>';
+                            echo '<div class="left-box navBlockLinks">';
+                            echo '<a href="/team_monitoring.php">' . _('Team Monitoring') . '</a>';
+                            echo '</div>';
+                        }
+                        
                         if ($_SESSION['status'] == 'Helfer' || $_SESSION['status'] == 'Admin') { // fuer Team das Helfer-Menue
                             echo '<h1>' . _('Support-Menü') . '</h1>';
                             echo '<div class="left-box navBlockLinks">';
