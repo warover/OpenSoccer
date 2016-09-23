@@ -167,12 +167,16 @@ class ComputerManager {
     private function selectPosToSearch($teamIds, $goalkeeperCount, $defenceCount, $midfeldCount, $strikerCount) {
         if ($goalkeeperCount < self::MAX_PLAYER_T) {
             $this->setPosToSearch($teamIds, "T");
+            return;
         } else if ($defenceCount < self::MAX_PLAYER_A) {
             $this->setPosToSearch($teamIds, "A");
+            return;
         } else if ($midfeldCount < self::MAX_PLAYER_M) {
             $this->setPosToSearch($teamIds, "M");
+            return;
         } else if ($strikerCount < self::MAX_PLAYER_S) {
             $this->setPosToSearch($teamIds, "S");
+            return;
         }
         
         $avgTalentT = $this->getAvgByPos($teamIds, "T");
