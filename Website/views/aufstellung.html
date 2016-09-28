@@ -141,22 +141,24 @@
             <span>Spieler wählen</span>
             <span style="cursor: pointer; position: absolute; right: 15px;" data-bind="click: closeDialog()">X</span>
         </div>
-        <!-- ko foreach: choosablePlayers -->
-        <div class="os-dialog-card" data-bind="css: {'os-dialog-player-active': $parent.isOnPosition($data)}, click: function() {$parent.setPlayerToPosition($data);}">
-            <div style="margin-right: 5px;display: inline-block;">
-                <img src="images/trikot.png" style="width:40px;" alt="trikot" />
+        <div style="height: 93%;overflow-y: scroll;">
+            <!-- ko foreach: choosablePlayers -->
+            <div class="os-dialog-card" data-bind="css: {'os-dialog-player-active': $parent.isOnPosition($data)}, click: function() {$parent.setPlayerToPosition($data);}">
+                <div style="margin-right: 5px;display: inline-block;">
+                    <img src="images/trikot.png" style="width:40px;" alt="trikot" />
+                </div>
+                <div style="display: inline-block;width:130px;">
+                    <b><div data-bind="text: vorname() + ' ' + nachname()"></div></b>
+                    <div data-bind="text: 'Alter: ' + Math.floor(wiealt() / 365)"></div>
+                    <div data-bind="text: 'Stärke: ' + staerke()"></div>
+                </div>
+                <div style="display: inline-block; width: 85px;">
+                    <div data-bind="text: 'Frische: ' + $parent.percent(frische())"></div>
+                    <div data-bind="text: 'Moral: ' + $parent.percent(moral()), style: { color: moral() > 75 ? 'green' : moral() > 60 ? '' : 'red' }"></div>
+                </div>
             </div>
-            <div style="display: inline-block;width:130px;">
-                <b><div data-bind="text: vorname() + ' ' + nachname()"></div></b>
-                <div data-bind="text: 'Alter: ' + Math.floor(wiealt() / 365)"></div>
-                <div data-bind="text: 'Stärke: ' + staerke()"></div>
-            </div>
-            <div style="display: inline-block; width: 85px;">
-                <div data-bind="text: 'Frische: ' + $parent.percent(frische())"></div>
-                <div data-bind="text: 'Moral: ' + $parent.percent(moral()), style: { color: moral() > 75 ? 'green' : moral() > 60 ? '' : 'red' }"></div>
-            </div>
+            <!-- /ko -->
         </div>
-        <!-- /ko -->
     </div>
 </div>
 <!--<form action="/aufstellung.php?spieltypAufstellung=Liga" method="post" accept-charset="utf-8">
