@@ -285,10 +285,7 @@ else {
 <p><input type="submit" value="<?php echo _('Jetzt kostenlos mitspielen'); ?>" /></p>
 <p><?php echo _('Du kannst Deine Daten anschließend noch einmal prüfen, sie werden noch nicht gespeichert. Du darfst Dich nur ein einziges Mal registrieren und nur einen Verein haben.'); ?></p>
 </form>
-<h1>Dev Blog</h1>
 <?php
-include_once('devBlog/31_08_2016.html');
-include_once('devBlog/25_08_2016.html');
 if (isset($_GET['r'])) {
 	$referralID = mysql_real_escape_string(trim(strip_tags($_GET['r'])));
 	if (mb_strlen($referralID) == 32) {
