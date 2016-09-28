@@ -766,7 +766,7 @@ CREATE TABLE `man_supportRequests` (
   `timeAdded` int(10) unsigned NOT NULL DEFAULT '0',
   `lastAction` int(10) unsigned NOT NULL DEFAULT '0',
   `author` varchar(32) NOT NULL,
-  `category` enum('Frage','Fehlerbericht','Vorschlag') NOT NULL DEFAULT 'Frage',
+  `category` enum('Frage','Fehlerbericht','Vorschlag','Update') NOT NULL DEFAULT 'Frage',
   `title` varchar(150) NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`id`),
