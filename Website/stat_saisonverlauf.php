@@ -1,6 +1,6 @@
-<?php include 'zz1.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz1.php'); ?>
 <title><?php echo _('Saisonverlauf'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
-<?php include 'zz2.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
 <?php include 'zzsubnav_statistik.php'; ?>
 <?php if ($loggedin == 1) { ?>
 <h1><?php echo _('Saisonverlauf'); ?></h1>
@@ -45,4 +45,4 @@ else {
 <h1><?php echo _('Saisonverlauf'); ?></h1>
 <p><?php echo _('Du musst angemeldet sein, um diese Seite aufrufen zu können!'); ?></p>
 <?php } ?>
-<?php include 'zz3.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz3.php'); ?>

@@ -1,9 +1,9 @@
 <?php 
-include 'zz1.php'; 
-require_once 'controller/emblemController.php';
-require_once 'controller/teamController.php';
-require_once 'controller/userController.php';
-include 'zz2.php';
+include_once(dirname(__FILE__).'/zz1.php'); 
+require_once(dirname(__FILE__).'/controller/emblemController.php');
+require_once(dirname(__FILE__).'/controller/teamController.php');
+require_once(dirname(__FILE__).'/controller/userController.php');
+include_once(dirname(__FILE__).'/zz2.php');
 ?>
 <title><?php echo _('Wappen bestätigen'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
 
@@ -45,4 +45,4 @@ while ($emblem = mysql_fetch_object($unconfirmed)) {
 <h1><?php echo _('Unbestätigte Wappen'); ?></h1>
 <p><?php echo _('Du musst angemeldet sein, um diese Seite aufrufen zu können!'); ?></p>
 <?php } ?>
-<?php include 'zz3.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz3.php'); ?>

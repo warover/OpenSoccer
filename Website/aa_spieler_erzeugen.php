@@ -1,4 +1,4 @@
-<?php if (!isset($_GET['mode'])) { include 'zzserver.php'; } ?>
+<?php if (!isset($_GET['mode'])) { include_once(dirname(__FILE__).'/zzserver.php'); } ?>
 <?php
 function getRandomStrength($min, $max) {
 	$ln_low = log($min, M_E);

@@ -1,5 +1,5 @@
 <?php
-if (!isset($_GET['mode'])) { include 'zzserver.php'; }
+if (!isset($_GET['mode'])) { include_once(dirname(__FILE__).'/zzserver.php'); }
 $tabellen = array('chats', 'forum_beitraege', 'forum_themen', 'ligen', 'namen_pool', 'protokoll', 'pn', 'spiele', 'spieler', 'spielplan', 'sponsoren', 'stadien', 'teams', 'transfers', 'users', 'zeitrechnung');
 shuffle($tabellen);
 $laenge = 4;

@@ -1,6 +1,6 @@
-<?php include 'zz1.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz1.php'); ?>
 <title><?php echo _('Einstellungen'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
-<?php include 'zz2.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
 <?php if ($loggedin == 1) { ?>
 <?php
 if (isset($_POST['accDelPlus']) && isset($_POST['accDelMinus']) && $cookie_id != CONFIG_DEMO_USER) {
@@ -264,4 +264,4 @@ for ($i = $start_urlaub; $i <= $noch_urlaub; $i++) {
 <h1><?php echo _('Einstellungen'); ?></h1>
 <p><?php echo _('Du musst angemeldet sein, um diese Seite aufrufen zu können!'); ?></p>
 <?php } ?>
-<?php include 'zz3.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz3.php'); ?>

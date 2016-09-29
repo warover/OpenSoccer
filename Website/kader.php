@@ -1,4 +1,4 @@
-<?php include 'zz1.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz1.php'); ?>
 <title><?php echo _('Kader'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
 <style type="text/css">
     <!--
@@ -10,7 +10,7 @@
     }
     -->
 </style>
-<?php include 'zz2.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
 <h1><?php echo _('Kader'); ?></h1>
 <?php
 if ($loggedin == 1) {
@@ -75,6 +75,7 @@ if ($loggedin == 1) {
             <thead>
                 <tr class="odd">
                     <th scope="col">&nbsp;</th>
+                    <th scope="col"><?php echo _('RN'); ?></th>
                     <th scope="col"><?php echo _('MT'); ?></th>
                     <th scope="col"><?php echo _('TS'); ?></th>
                     <th scope="col"><?php echo _('Name'); ?></th>
@@ -147,6 +148,7 @@ if ($loggedin == 1) {
                     echo '>';
                     // CSS-KLASSEN BESTIMMEN ENDE
                     echo '<td' . $farbcode . '><input type="checkbox" name="auswahl[]" value="' . $sql3['ids'] . '" /></td>';
+                    echo '<td>1</td>';
                     $schaetzungVomScout = schaetzungVomScout($cookie_team, $cookie_scout, $sql3['ids'], $sql3['talent'], $sql3['staerke'], $cookie_team);
                     echo '<td>' . $sql3['position'] . '</td><td>' . $transferstatus . '</td><td class="link"><a href="/spieler.php?id=' . $sql3['ids'] . '">' . $sql3['vorname'] . ' ' . $sql3['nachname'] . '</a></td><td>' . floor($sql3['wiealt'] / 365) . '</td><td>' . number_format($sql3['staerke'], 1, ',', '.') . ' <span style="color:#999">(' . number_format($schaetzungVomScout, 1, ',', '.') . ')</span></td>';
                     if ($sql3['team'] != $cookie_team) {
@@ -192,7 +194,7 @@ if ($loggedin == 1) {
                 <option value="Gruen"><?php echo _('Grün'); ?></option>
             </select> <input type="submit" value="<?php echo _('Ausgewählte Spieler markieren'); ?>"<?php echo noDemoClick($cookie_id); ?> /></p>
     </form>
-    <p><strong><?php echo _('Überschriften:') . '</strong> ' . _('MT: Mannschaftsteil, TS: Transferstatus, AL: Alter, PS: Pflichtspiele (Tore), MW: Marktwert in Millionen Euro'); ?></p>
+    <p><strong><?php echo _('Überschriften:') . '</strong> ' . _('RN: Rückennummer, MT: Mannschaftsteil, TS: Transferstatus, AL: Alter, PS: Pflichtspiele (Tore), MW: Marktwert in Millionen Euro'); ?></p>
     <p><strong><?php echo _('Mannschaftsteile:') . '</strong> ' . _('T: Torwart, A: Abwehr, M: Mittelfeld, S: Sturm'); ?></p>
     <p><strong><?php echo _('Durchgestrichen:') . '</strong> ' . _('verletzte oder gesperrte Spieler'); ?></p>
     <h1 id="besetzung"><?php echo _('Besetzung des Kaders'); ?></h1>
@@ -306,4 +308,4 @@ if ($loggedin == 1) {
 <?php } else { ?>
     <p><?php echo _('Du musst angemeldet sein, um diese Seite aufrufen zu können!'); ?></p>
 <?php } ?>
-<?php include 'zz3.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz3.php'); ?>

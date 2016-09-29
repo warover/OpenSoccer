@@ -1,4 +1,4 @@
-<?php include 'zz1.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz1.php'); ?>
 <title><?php echo _('Reichste Ligen'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
 <style type="text/css">
 <!--
@@ -7,7 +7,7 @@
 }
 -->
 </style>
-<?php include 'zz2.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
 <?php include 'zzsubnav_statistik.php'; ?>
 <h1><?php echo _('Reichste Ligen'); ?></h1>
 <?php if ($loggedin == 1) { ?>
@@ -40,4 +40,4 @@ while ($sql3 = mysql_fetch_assoc($sql2)) {
 <?php } else { ?>
 <p><?php echo _('Du musst angemeldet sein, um diese Seite aufrufen zu können!'); ?></p>
 <?php } ?>
-<?php include 'zz3.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz3.php'); ?>

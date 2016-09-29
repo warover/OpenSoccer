@@ -1,6 +1,6 @@
 <?php
 
-require_once '/../utils/database.php';
+require_once(dirname(__FILE__).'/../utils/database.php');
 
 class TeamController {
 

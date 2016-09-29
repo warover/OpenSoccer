@@ -1,8 +1,8 @@
 <?php
 ini_set('session.use_trans_sid', 0);
 
-include 'zzserver.php';
-include 'zzcookie.php';
+include_once(dirname(__FILE__).'/zzserver.php');
+include_once(dirname(__FILE__).'/zzcookie.php');
 
 if (CONFIG_USE_HTTPS && CONFIG_USE_HTTPS_HSTS) {
     // use HTTP Strict Transport Security (HSTS) with a period of three months
@@ -22,7 +22,7 @@ $eintraege_pro_seite = 15; // ANGEBEN DER BEITRAEGE PRO SEITE
 $start = $seite*$eintraege_pro_seite-$eintraege_pro_seite; // ERMITTELN DER STARTZAHL FÜR DIE ABFRAGE
 // BLAETTERN ENDE
 
-require_once('/classes/I18N.php');
+require_once(dirname(__FILE__).'/classes/I18N.php');
 if (isset($_GET['setLocale'])) {
     I18N::changeLanguage($_GET['setLocale']);
 }

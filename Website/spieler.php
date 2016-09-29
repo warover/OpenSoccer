@@ -1,4 +1,4 @@
-<?php include 'zz1.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz1.php'); ?>
 <?php
 if (!isset($_GET['id'])) { exit; }
 $sql1 = "SELECT id, ids, vorname, nachname, vertrag, position, wiealt, moral, staerke, talent, frische, marktwert, verhandlungsbasis, gehalt, transfermarkt, team, leiher, spiele_verein, spiele, tore, verletzung, jugendTeam, pokalNurFuer FROM ".$prefix."spieler WHERE ".$prefix."spieler.ids = '".mysql_real_escape_string($_GET['id'])."'";
@@ -53,7 +53,7 @@ else {
 }
 -->
 </style>
-<?php include 'zz2.php';
+<?php include_once(dirname(__FILE__).'/zz2.php');
 echo '<h1>'.__('Spieler: %1$s %2$s', $sql3['vorname'], $sql3['nachname']).'</h1>';
 if (isset($_GET['action'])) {
 	if ($_GET['action'] == 'setWatching') {
@@ -262,4 +262,4 @@ if ($loggedin == 1 && $sql3['team'] == $cookie_team && $sql3['leiher'] == 'keine
 	}
 }
 ?>
-<?php include 'zz3.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz3.php'); ?>

@@ -1,9 +1,9 @@
 <?php
 
 if (!isset($_GET['mode'])) {
-    include 'zzserver.php';
+    include_once(dirname(__FILE__).'/zzserver.php');
 }
-require_once '/utils/database.php';
+require_once(dirname(__FILE__).'/utils/database.php');
 
 $monitoredTeams = array(
     "8e98d81f8217304975ccb23337bb5761",

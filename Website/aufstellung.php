@@ -1,15 +1,15 @@
-<?php include 'zz1.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz1.php'); ?>
 <title><?php echo _('Aufstellung'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
 <style type="text/css">
     .os-player-row-injured td, .os-player-row-injured td a { color: #ff0000; }
 </style>
-<?php include 'zz2.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
 <h1><?php echo _('Aufstellung'); ?></h1>
 <?php
 $spieltypAufstellung = 'Liga';
 
 if ($loggedin == 1) {
-    include_once '/views/aufstellung.html';
+    include_once(dirname(__FILE__).'/views/aufstellung.html');
 
     $gf1 = "SELECT spieler, farbe FROM " . $prefix . "spieler_mark WHERE team = '" . $cookie_team . "'";
     $gf2 = mysql_query($gf1);
@@ -46,9 +46,9 @@ if ($loggedin == 1) {
         $players[] = $sql3;
     }
 
-    include_once '/viewModels/aufstellung.php';
+    include_once(dirname(__FILE__).'/viewModels/aufstellung.php');
 } else {
     echo '<p>' . _('Du musst angemeldet sein, um diese Seite aufrufen zu können!') . '</p>';
 }
-include 'zz3.php';
+include_once(dirname(__FILE__).'/zz3.php');
 ?>

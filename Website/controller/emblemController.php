@@ -1,8 +1,8 @@
 <?php
 
-require_once '/../utils/database.php';
-require_once '/messageController.php';
-require_once '/userController.php';
+require_once(dirname(__FILE__).'/../utils/database.php');
+require_once(dirname(__FILE__).'/messageController.php');
+require_once(dirname(__FILE__).'/userController.php');
 
 class EmblemController {
 	

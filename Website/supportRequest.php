@@ -1,8 +1,8 @@
 <?php
 // AJAX BEGIN
 if (isset($_GET['likeComment'])) {
-    include 'zzserver.php';
-    include 'zzcookie.php';
+    include_once(dirname(__FILE__).'/zzserver.php');
+    include_once(dirname(__FILE__).'/zzcookie.php');
     if ($cookie_id != CONFIG_DEMO_USER) {
         $likeComment = intval(secure2id(trim($_GET['likeComment'])));
         $getAuthor1 = "SELECT userID FROM " . $prefix . "supportComments WHERE id = " . $likeComment;
@@ -29,7 +29,7 @@ if (isset($_GET['likeComment'])) {
 <?php if (!isset($_GET['id'])) {
     exit;
 } ?>
-<?php include 'zz1.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz1.php'); ?>
 <?php
 $requestID = secure2id($_GET['id']);
 $sql1 = "SELECT id, open, pro, contra, timeAdded, lastAction, author, category, title, description, visibilityLevel FROM " . $prefix . "supportRequests WHERE id = " . $requestID;
@@ -85,7 +85,7 @@ $entryNumber .= ')';
     }
     -->
 </style>
-<?php include 'zz2.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
 <h1><?php echo __('Support: %s', $entryNumber); ?></h1>
 <?php if ($loggedin == 1) { ?>
     <?php
@@ -136,7 +136,7 @@ $entryNumber .= ')';
         $chatSperreBis = $blockCom3['MAX(chatSperre)'];
         if ($chatSperreBis > 0 && $chatSperreBis > time()) {
             addInfoBox(__('Du bist noch bis zum %1$s Uhr für die Kommunikation im Spiel gesperrt. Wenn Dir unklar ist warum, frage bitte das %2$s.', date('d.m.Y H:i', $chatSperreBis), '<a class="inText" href="/wio.php">' . _('Support-Team') . '</a>'));
-            include 'zz3.php';
+            include_once(dirname(__FILE__).'/zz3.php');
             exit;
         }
     }
@@ -353,4 +353,4 @@ $entryNumber .= ')';
 <?php } else { ?>
     <p><?php echo _('Du musst angemeldet sein, um diese Seite aufrufen zu können!'); ?></p>
 <?php } ?>
-<?php include 'zz3.php'; ?>
+<?php include_once(dirname(__FILE__).'/zz3.php'); ?>

@@ -1,8 +1,8 @@
 <?php
 if (!isset($_GET['id']) OR !isset($_GET['typ'])) { exit; }
-include 'zzserver.php';
-include 'zzcookie.php';
-require_once('./classes/Friendlies.php');
+include_once(dirname(__FILE__).'/zzserver.php');
+include_once(dirname(__FILE__).'/zzcookie.php');
+require_once(dirname(__FILE__).'/classes/Friendlies.php');
 function isFriendlyDateValid($matchTime) {
     return $matchTime > time() && $matchTime < (time() + 3600 * 24 * (22 - GameTime::getMatchDay()));
 }
