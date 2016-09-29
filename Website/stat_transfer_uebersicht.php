@@ -1,7 +1,7 @@
 <?php include_once(dirname(__FILE__).'/zz1.php'); ?>
 <title><?php echo _('Transfer-Übersicht'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
 <?php include_once(dirname(__FILE__).'/zz2.php'); ?>
-<?php include 'zzsubnav_statistik.php'; ?>
+<?php include_once(dirname(__FILE__).'/zzsubnav_statistik.php'); ?>
 <?php if ($loggedin == 1) { ?>
 <h1><?php echo _('Liga wählen'); ?></h1>
 <form action="" method="get" accept-charset="utf-8">

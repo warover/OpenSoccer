@@ -8,7 +8,7 @@
 -->
 </style>
 <?php include_once(dirname(__FILE__).'/zz2.php'); ?>
-<?php include 'zzsubnav_statistik.php'; ?>
+<?php include_once(dirname(__FILE__).'/zzsubnav_statistik.php'); ?>
 <?php if ($loggedin == 1) { ?>
 <?php
 if ($live_scoring_spieltyp_laeuft != '') {

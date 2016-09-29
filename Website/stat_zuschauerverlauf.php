@@ -1,7 +1,7 @@
 <?php include_once(dirname(__FILE__).'/zz1.php'); ?>
 <title><?php echo _('Zuschauerverlauf'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
 <?php include_once(dirname(__FILE__).'/zz2.php'); ?>
-<?php include 'zzsubnav_statistik.php'; ?>
+<?php include_once(dirname(__FILE__).'/zzsubnav_statistik.php'); ?>
 <?php if ($loggedin == 1) { ?>
 <?php if ($cookie_team != '__'.$cookie_id) { ?>
 <h1><?php echo _('Zuschauerverlauf'); ?></h1>
