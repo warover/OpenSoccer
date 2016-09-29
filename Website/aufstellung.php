@@ -43,6 +43,7 @@ if ($loggedin == 1) {
     $counter = 0;
     $players = array();
     while ($sql3 = mysql_fetch_assoc($sql2)) {
+        $sql3['talent'] = number_format(schaetzungVomScout($cookie_team, $cookie_scout, $sql3['ids'], $sql3['talent'], $sql3['staerke']), 1, ',', '.');
         $players[] = $sql3;
     }
 
