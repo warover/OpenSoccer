@@ -83,6 +83,9 @@
 .os-dialog-player-active {
     background-color: #7eba3c;
 }
+.os-dialog-player-activeO {
+    background-color: #c9d05c;
+}
 .os-lineup-field {
     position: relative;
     left: 0;
@@ -109,6 +112,13 @@
 }
 .os-lineup-player-placeholder {
     border: 2px dashed grey;
+}
+.os-lineup-player-name {
+    white-space: nowrap;
+    color: #444444;
+    position: relative;
+    top: 40px;
+    font-size: 9px;
 }
 .os-lineup-player.os-lineup-player-goalkeeper {
     left: 242px;

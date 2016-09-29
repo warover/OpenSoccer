@@ -7,9 +7,12 @@
         self.selectedOptionTake = ko.observable();
         self.choosablePlayers = ko.observableArray();
         self.selectedPosition = ko.observable();
+        self.anzPlayer = ko.observable();
+        self.aufstellungsstaerke = ko.observable();
 
         self.changeType = function (type) {
             self.aufstellungsType(type);
+            updateInfoBox();
         };
 
         self.percent = function (value) {
@@ -54,7 +57,12 @@
         };
 
         self.isOnPosition = function (player) {
-            return player['startelf_' + self.aufstellungsType()]() == self.selectedPosition();
+            if (parseInt(player['startelf_' + self.aufstellungsType()]()) === self.selectedPosition()) {
+                return 1;
+            } else if (parseInt(player['startelf_' + self.aufstellungsType()]()) > 0) {
+                return 2;
+            }
+            return 0;
         };
 
         self.availableOptions = function () {
@@ -102,6 +110,7 @@
                     } else {
                         $.notify("Es ist ein Fehler aufgetreten.", "error");
                     }
+                    updateInfoBox();
                 });
             }
         };
@@ -159,13 +168,25 @@
             }
 
             player["startelf_" + self.aufstellungsType()](self.selectedPosition());
-            //self.players.valueHasMutated();
             self.closeDialog();
         };
 
         self.closeDialog = function () {
+            updateInfoBox();
             $("#playerSelectDialog").hide();
         };
+
+        function updateInfoBox() {
+            var anz = _.countBy(self.players(), function (player) {
+                return player["startelf_" + self.aufstellungsType()]() > 0;
+            })['true'];
+            self.anzPlayer(anz);
+            var staerke = _.reduce(self.players(), function (memo, player) {
+                return memo += player["startelf_" + self.aufstellungsType()]() > 0 ? parseFloat(player.staerke()) : 0;
+            }, 0);
+
+            self.aufstellungsstaerke(Math.round(staerke * 10) / 10);
+        }
 
     }
 

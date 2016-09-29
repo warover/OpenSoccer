@@ -64,7 +64,7 @@ function setTaskDone($shortName) {
 <meta name="robots" content="index,follow" />
 <link rel="stylesheet" href="/images/Refresh.php?v=234936" type="text/css" />
 <link rel="stylesheet" href="/css/emblem.css" type="text/css" />
-<link rel="stylesheet" href="/css/app.css" type="text/css" />
+<link rel="stylesheet" href="/css/app.css?v=29092016" type="text/css" />
 <script type="text/javascript" src="/js/drop_down.js"></script>
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/knockout.min.js"></script>
