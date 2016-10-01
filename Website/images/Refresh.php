@@ -715,6 +715,24 @@ div#sidebar-expander span {
     text-align: center;
 }
 
+.os-lineup-fieldm {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 522px;
+    height: 400px;
+    margin: 0 auto;
+    background-image: url(../images/fussballfeld.png);
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    color: #fff;
+    font-weight: bold;
+    z-index: 1;
+}
+
 @media (max-width: 879px) {
 	#wrap, #content-wrap, #header, #footer {
 		width: auto;
@@ -753,11 +771,11 @@ div#sidebar-expander span {
 		display: block;
 		margin: 12px 0;
 	}
-    .os-lineup-field {
+    .os-lineup-fieldm {
         height: 520px;
         padding: 12px 0;
     }
-    .os-lineup-player {
+    .os-lineup-playerm {
         position: static;
         display: block;
         width: 120px;

@@ -27,6 +27,7 @@
 .os-player-placeholder {
     border-style: dashed;
     border-color: #717171;
+    width: 40px;
 }
 .os-player-dialog-backdrop {
     background-color: rgba(0,0,0,0.6);
@@ -105,24 +106,25 @@
 }
 .os-lineup-player {
     position: absolute;
-    width:40px; 
-    height: 40px;  
     text-align: center;
     cursor: pointer;
 }
-.os-lineup-player-placeholder {
-    border: 2px dashed grey;
+.os-trikot-container {
+    width: 40px;
+    position: relative;
+    margin: auto;
+}
+.os-trikot-container > img {
+    width: 100%;
 }
 .os-lineup-player-name {
     white-space: nowrap;
     color: #444444;
-    position: relative;
-    top: 40px;
     font-size: 9px;
 }
 .os-lineup-player.os-lineup-player-goalkeeper {
     left: 242px;
-    top: 345px;
+    top: 340px;
 }
 .os-lineup-player.os-lineup-player-defender1 {
     left: 36px;
