@@ -327,6 +327,7 @@ if (!isset($_SESSION['via_android'])) {
                             echo '<h1>' . _('Admin-Menü') . '</h1>';
                             echo '<div class="left-box navBlockLinks">';
                             echo '<a href="/team_monitoring.php">' . _('Team Monitoring') . '</a>';
+                            echo '<a href="/playerManagement.php">' . _('Spielerverwaltung') . '</a>';
                             echo '</div>';
                         }
                         
