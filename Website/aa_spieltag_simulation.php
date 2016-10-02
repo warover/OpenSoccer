@@ -1175,9 +1175,9 @@ while ($sql3 = mysql_fetch_assoc($sql2)) {
         $erschoepungswert1 = 0;
         $erschoepungswert2 = 0;
     }
-    $ermued1 = "UPDATE " . $prefix . "spieler SET frische = frische-" . $erschoepungswert1 . $pflichtspielPlus . ", spiele_gesamt = spiele_gesamt+1, spiele_verein = spiele_verein+1" . $pokalNurFuerSQL . " WHERE team = '" . $team1_id . "' AND startelf_" . $to_simulate . " != 0 AND verletzung = 0 LIMIT 11";
+    $ermued1 = "UPDATE " . $prefix . "spieler SET frische = frische-" . $erschoepungswert1 . $pflichtspielPlus . ", spiele_gesamt = spiele_gesamt+1, spiele_saison = spiele_saison+1, spiele_verein = spiele_verein+1" . $pokalNurFuerSQL . " WHERE team = '" . $team1_id . "' AND startelf_" . $to_simulate . " != 0 AND verletzung = 0 LIMIT 11";
     $ermued1 = mysql_query($ermued1) or reportError(mysql_error(), $ermued1);
-    $ermued2 = "UPDATE " . $prefix . "spieler SET frische = frische-" . $erschoepungswert2 . $pflichtspielPlus . ", spiele_gesamt = spiele_gesamt+1, spiele_verein = spiele_verein+1 WHERE team = '" . $team2_id . "' AND startelf_" . $to_simulate . " != 0 AND verletzung = 0 LIMIT 11";
+    $ermued2 = "UPDATE " . $prefix . "spieler SET frische = frische-" . $erschoepungswert2 . $pflichtspielPlus . ", spiele_gesamt = spiele_gesamt+1, spiele_saison = spiele_saison+1, spiele_verein = spiele_verein+1 WHERE team = '" . $team2_id . "' AND startelf_" . $to_simulate . " != 0 AND verletzung = 0 LIMIT 11";
     $ermued2 = mysql_query($ermued2) or reportError(mysql_error(), $ermued2);
     // FRISCHE ABZIEHEN ENDE
     // TORSCHUETZEN-, GELB-, ROT-AUSWAHL ANFANG

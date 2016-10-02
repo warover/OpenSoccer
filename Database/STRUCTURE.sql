@@ -598,7 +598,7 @@ CREATE TABLE `man_spieler` (
   `position` char(1) NOT NULL,
   `wiealt` smallint(6) unsigned NOT NULL DEFAULT '0',
   `frische` tinyint(1) NOT NULL DEFAULT '100',
-  `startelf` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `spiele_saison` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `spiele` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `spiele_gesamt` smallint(5) unsigned NOT NULL DEFAULT '0',
   `spiele_verein` smallint(5) unsigned NOT NULL DEFAULT '0',
