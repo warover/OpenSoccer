@@ -238,22 +238,37 @@ class ComputerManager {
     }
 
     private function nominateDefence($teamIds) {
-        $sql = "UPDATE " . CONFIG_TABLE_PREFIX . "spieler SET startelf_Liga = 1, startelf_Pokal = 1, startelf_Cup = 1 WHERE team = '" . $teamIds . "' AND position = 'A' AND verletzung = 0 ORDER BY (staerke*frische) DESC LIMIT 4";
-        DB::query($sql, false);
+        $select = "SELECT ids FROM " . CONFIG_TABLE_PREFIX . "spieler WHERE team = '" . $teamIds . "' AND position = 'A' AND verletzung = 0 ORDER BY (staerke*frische) DESC LIMIT 4";
+        $result = DB::query($select, false);
+        for ($i = 0; $i < 4; $i++) {
+            $ids = mysql_result($result, $i);
+            $sql = "UPDATE " . CONFIG_TABLE_PREFIX . "spieler SET startelf_Liga = ".($i + 2).", startelf_Pokal = ".($i + 2).", startelf_Cup = ".($i + 2)." WHERE ids = '" . $ids . "'";
+            DB::query($sql, false);
+        }
     }
 
     private function nominateMidfeld($teamIds) {
-        $sql = "UPDATE " . CONFIG_TABLE_PREFIX . "spieler SET startelf_Liga = 1, startelf_Pokal = 1, startelf_Cup = 1 WHERE team = '" . $teamIds . "' AND position = 'M' AND verletzung = 0 ORDER BY (staerke*frische) DESC LIMIT 4";
-        DB::query($sql, false);
+        $select = "SELECT ids FROM " . CONFIG_TABLE_PREFIX . "spieler WHERE team = '" . $teamIds . "' AND position = 'M' AND verletzung = 0 ORDER BY (staerke*frische) DESC LIMIT 4";
+        $result = DB::query($select, false);
+        for ($i = 0; $i < 4; $i++) {
+            $ids = mysql_result($result, $i);
+            $sql = "UPDATE " . CONFIG_TABLE_PREFIX . "spieler SET startelf_Liga = ".($i + 6).", startelf_Pokal = ".($i + 6).", startelf_Cup = ".($i + 6)." WHERE ids = '" . $ids . "'";
+            DB::query($sql, false);
+        }
     }
 
     private function nominateStriker($teamIds) {
-        $sql = "UPDATE " . CONFIG_TABLE_PREFIX . "spieler SET startelf_Liga = 1, startelf_Pokal = 1, startelf_Cup = 1 WHERE team = '" . $teamIds . "' AND position = 'S' AND verletzung = 0 ORDER BY (staerke*frische) DESC LIMIT 2";
-        DB::query($sql, false);
+        $select = "SELECT ids FROM " . CONFIG_TABLE_PREFIX . "spieler WHERE team = '" . $teamIds . "' AND position = 'S' AND verletzung = 0 ORDER BY (staerke*frische) DESC LIMIT 2";
+        $result = DB::query($select, false);
+        for ($i = 0; $i < 2; $i++) {
+            $ids = mysql_result($result, $i);
+            $sql = "UPDATE " . CONFIG_TABLE_PREFIX . "spieler SET startelf_Liga = ".($i + 10).", startelf_Pokal = ".($i + 10).", startelf_Cup = ".($i + 10)." WHERE ids = '" . $ids . "'";
+            DB::query($sql, false);
+        }
     }
 
     private function calcNomination($teamIds) {
-        $sql = "UPDATE " . CONFIG_TABLE_PREFIX . "teams SET aufstellung = (SELECT SUM(staerke) FROM " . CONFIG_TABLE_PREFIX . "spieler WHERE team = '" . $teamIds . "' AND startelf_Liga = 1) WHERE ids = '" . $teamIds . "'";
+        $sql = "UPDATE " . CONFIG_TABLE_PREFIX . "teams SET aufstellung = (SELECT SUM(staerke) FROM " . CONFIG_TABLE_PREFIX . "spieler WHERE team = '" . $teamIds . "' AND startelf_Liga > 0) WHERE ids = '" . $teamIds . "'";
         DB::query($sql, false);
     }
 

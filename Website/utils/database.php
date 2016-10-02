@@ -12,6 +12,10 @@ class DB {
 
         $result = mysql_query($query);
         
+        if ($result === FALSE) {
+            LOG::logToErrFile($query . "\n");
+        }
+        
         if($closeConnection) {
             static::close();
         }

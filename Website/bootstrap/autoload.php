@@ -1,7 +1,7 @@
 <?php
 
 require_once(dirname(__FILE__) . '/../utils/database.php');
-//require_once dirname(__DIR__) . '/Logger/Log.php';
+require_once dirname(__FILE__) . '/../Logger/Log.php';
 
 spl_autoload_register("autoloadController");
 spl_autoload_register("autoloadRouter");
