@@ -82,7 +82,7 @@ class ComputerManager {
 
     private function manageHolidayTeam($data) {
         $this->extendContract($data->ids, false, self::CONTRACT_MAX_AGE_HOLIDAY);
-        $this->updateNomination($data - ids);
+        $this->updateNomination($data->ids);
         $this->setLastManaged($data->ids);
     }
 
