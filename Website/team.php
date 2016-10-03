@@ -13,7 +13,7 @@ function kontoToWort($konto) {
 	else { return _('hervorragend'); }
 }
 $clearid = mysql_real_escape_string(trim(strip_tags($_GET['id'])));
-$sql1 = "SELECT name, rank, konto, staerke, pokalrunde, vorjahr_pokalrunde, cuprunde, vorjahr_cuprunde, vorjahr_platz, aufstellung, liga, vorjahr_elo, elo, meisterschaften, pokalsiege, cupsiege, friendlies, friendlies_ges, last_managed FROM ".$prefix."teams WHERE ids = '".$clearid."'";
+$sql1 = "SELECT name, rank, konto, staerke, pokalrunde, vorjahr_pokalrunde, cuprunde, vorjahr_cuprunde, vorjahr_platz, liga, vorjahr_elo, elo, meisterschaften, pokalsiege, cupsiege, friendlies, friendlies_ges, last_managed FROM ".$prefix."teams WHERE ids = '".$clearid."'";
 $sql2 = mysql_query($sql1);
 $sql2a = mysql_num_rows($sql2);
 if ($sql2a == 0) { exit; }
@@ -77,15 +77,14 @@ echo '<tr class="odd"><td>'._('Liga (Vorjahr)').'</td><td>'.$sql3['rank'].'. ('.
 echo '<tr><td>'._('Pokal (Vorjahr)').'</td><td>'.pokalrunde_wort($sql3['pokalrunde']).' ('.pokalrunde_wort($sql3['vorjahr_pokalrunde']).')</td></tr>';
 echo '<tr class="odd"><td>'._('Cup (Vorjahr)').'</td><td>'.cuprunde_wort($sql3['cuprunde']).' ('.cuprunde_wort($sql3['vorjahr_cuprunde']).')</td></tr>';
 echo '<tr><td>'._('Kaderstärke').'</td><td>'.number_format($sql3['staerke'], 1, ',', '.').'</td></tr>';
-echo '<tr class="odd"><td>'._('Aufstellungsstärke').'</td><td>'.number_format($sql3['aufstellung'], 1, ',', '.').'</td></tr>';
-echo '<tr><td>'._('Meisterschaft').'</td><td>'.$sql3['meisterschaften'].'x</td></tr>';
-echo '<tr class="odd"><td>'._('Pokalsieg').'</td><td>'.$sql3['pokalsiege'].'x</td></tr>';
-echo '<tr><td>'._('Cupsieg').'</td><td>'.$sql3['cupsiege'].'x</td></tr>';
-echo '<tr class="odd"><td>'._('RKP (Vorjahr)').'</td><td>'.__('%1$s (%2$s) Punkte', number_format($sql3['elo'], 0, ',', '.'), number_format($sql3['vorjahr_elo'], 0, ',', '.')).'</td></tr>';
-echo '<tr><td>'._('Testspiele').'</td><td>';
+echo '<tr class="odd"><td>'._('Meisterschaft').'</td><td>'.$sql3['meisterschaften'].'x</td></tr>';
+echo '<tr><td>'._('Pokalsieg').'</td><td>'.$sql3['pokalsiege'].'x</td></tr>';
+echo '<tr class="odd"><td>'._('Cupsieg').'</td><td>'.$sql3['cupsiege'].'x</td></tr>';
+echo '<tr><td>'._('RKP (Vorjahr)').'</td><td>'.__('%1$s (%2$s) Punkte', number_format($sql3['elo'], 0, ',', '.'), number_format($sql3['vorjahr_elo'], 0, ',', '.')).'</td></tr>';
+echo '<tr class="odd"><td>'._('Testspiele').'</td><td>';
 if ($live_scoring_spieltyp_laeuft == 'Test') { echo '?'; } else { echo __('%1$s (%2$s Siege)', $sql3['friendlies_ges'], $sql3['friendlies']); }
 echo '</td></tr>';
-echo '<tr class="odd"><td>'._('Stadion').'</td><td>'.__('%s Plätze', number_format($stadion3['plaetze'], 0, ',', '.')).'</td></tr>';
+echo '<tr><td>'._('Stadion').'</td><td>'.__('%s Plätze', number_format($stadion3['plaetze'], 0, ',', '.')).'</td></tr>';
 ?>
 </tbody>
 </table>
