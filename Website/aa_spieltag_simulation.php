@@ -1397,7 +1397,7 @@ if ($to_simulate == 'Liga') {
 }
 $max100 = "UPDATE " . $prefix . "spieler SET frische = 100 WHERE frische > 100";
 $max100 = mysql_query($max100) or reportError(mysql_error(), $max100);
-$min0 = "UPDATE " . $prefix . "spieler SET startelf = 0 WHERE frische < 5";
+$min0 = "UPDATE " . $prefix . "spieler SET startelf_Liga = 0, startelf_Pokal = 0, startelf_Cup = 0, startelf_Test = 0 WHERE frische < 5";
 $min0 = mysql_query($min0) or reportError(mysql_error(), $min0);
 $max100 = "UPDATE " . $prefix . "spieler SET moral = 100 WHERE moral > 100";
 $max100 = mysql_query($max100) or reportError(mysql_error(), $max100);
