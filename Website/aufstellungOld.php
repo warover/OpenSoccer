@@ -106,7 +106,7 @@ echo '</p>';
         ?>
         <?php
 // SPIELER IN ARRAY LESEN ANFANG
-        $player1 = "SELECT ids, vorname, nachname, staerke, position, pokalNurFuer, startelf_" . $spieltypAufstellung . " AS startelfWert FROM " . $prefix . "spieler WHERE team = '" . $cookie_team . "' AND verletzung = 0 AND frische > 4 ORDER BY startelf DESC, staerke DESC";
+        $player1 = "SELECT ids, vorname, nachname, staerke, position, pokalNurFuer, startelf_" . $spieltypAufstellung . " AS startelfWert FROM " . $prefix . "spieler WHERE team = '" . $cookie_team . "' AND verletzung = 0 AND frische > 4 ORDER BY staerke DESC";
         $player2 = mysql_query($player1);
         $player_t = array(array('kein_spieler', '- Kein Spieler -', 0));
         $player_a = array(array('kein_spieler', '- Kein Spieler -', 0));
