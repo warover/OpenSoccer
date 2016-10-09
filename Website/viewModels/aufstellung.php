@@ -163,12 +163,15 @@
             var oldPlayer = _.find(self.players(), function (player) {
                 return player["startelf_" + self.aufstellungsType()]() == self.selectedPosition();
             });
-            player["startelf_" + self.aufstellungsType()](self.selectedPosition());
+
+            if (player) {
+                player["startelf_" + self.aufstellungsType()](self.selectedPosition());
+            }
+            
             if (oldPlayer) {
                 oldPlayer["startelf_" + self.aufstellungsType()](0);
             }
 
-            
             self.closeDialog();
         };
 

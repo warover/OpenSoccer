@@ -181,6 +181,11 @@
             <span style="cursor: pointer; position: absolute; right: 15px;" data-bind="click: closeDialog()">X</span>
         </div>
         <div style="height: 93%;overflow-y: scroll;">
+            <div class="os-dialog-card" data-bind="click: function() {setPlayerToPosition(null);}">
+                <div style="text-align: center;">
+                    Kein Spieler
+                </div>
+            </div>
             <!-- ko foreach: choosablePlayers -->
             <div class="os-dialog-card" data-bind="css: {'os-dialog-player-active': $parent.isOnPosition($data) === 1, 'os-dialog-player-activeO': $parent.isOnPosition($data) === 2}, click: function() {$parent.setPlayerToPosition($data);}">
                 <div style="margin-right: 5px;display: inline-block;">
@@ -200,19 +205,6 @@
         </div>
     </div>
 </div>
-<!--<form action="/aufstellung.php?spieltypAufstellung=Liga" method="post" accept-charset="utf-8">
-    <p><select name="farbeAufstellen" size="1" style="width:200px">
-            <option value="Aqua">Aqua</option>
-            <option value="Blau">Blau</option>
-            <option value="Gelb">Gelb</option>
-            <option value="Lila">Lila</option>
-            <option value="Oliv">Oliv</option>
-            <option value="Pink">Pink</option>
-            <option value="Rot">Rot</option>
-            <option value="Silber">Silber</option>
-            <option value="Gruen">Grün</option>
-        </select> <input type="submit" value="Farbe aufstellen" onclick="return confirm('Bist Du sicher?')"></p>
-</form>-->
 <p>
     <select size="1" style="width:200px" data-bind="options: availableOptions(), value: selectedOptionTake"></select>
     <button data-bind="click: takeAufstellung">Aufstellung übernehmen</button>
