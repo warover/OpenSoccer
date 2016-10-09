@@ -1285,7 +1285,7 @@ while ($sql3 = mysql_fetch_assoc($sql2)) {
                     asort($verletzungenVorauswahlTeam2, SORT_NUMERIC);
                     if ($verletzter = each($verletzungenVorauswahlTeam2)) {
                         $verletzungsDaten = create_verletzung();
-                        $torj1 = "UPDATE " . $prefix . "spieler SET verletzung = " . $verletzungsDaten['dauer'] . ", startelf_" . $to_simulate . " = 0 WHERE ids = '" . $verletzter['key'] . "'";
+                        $torj1 = "UPDATE " . $prefix . "spieler SET verletzung = " . $verletzungsDaten['dauer'] . ", startelf_Liga = 0, startelf_Pokal = 0, startelf_Cup = 0, startelf_Test = 0 WHERE ids = '" . $verletzter['key'] . "'";
                         $torj2 = mysql_query($torj1) or reportError(mysql_error(), $torj1);
                         $formulierung = '<a href="/spieler.php?id=' . $verletzter['key'] . '">Einer Deiner Spieler</a> fällt ' . $verletzungsDaten['name'] . ' für ' . $verletzungsDaten['dauer'] . ' Tage aus.';
                         $vlog1 = "INSERT INTO " . $prefix . "protokoll (team, text, typ, zeit) VALUES ('" . $team2_id . "', '" . mysql_real_escape_string($formulierung) . "', 'Verletzung', " . time() . ")";
