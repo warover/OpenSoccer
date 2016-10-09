@@ -154,6 +154,8 @@ class ComputerManager {
             } else if ($talentDiff >= 0) {
                 $strengthDiff = $player->staerke - $playerToDismiss->staerke;
                 $playerToDismiss = $strengthDiff < 0 ? $player : $playerToDismiss;
+            } else {
+                $playerToDismiss = $player;
             }
         }
         $this->dismissPlayer($playerToDismiss);
