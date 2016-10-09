@@ -1,8 +1,8 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../utils/database.php');
-require_once(dirname(__FILE__) . '/messageController.php');
-require_once(dirname(__FILE__) . '/userController.php');
+require_once(__DIR__ . '/../utils/database.php');
+require_once(__DIR__ . '/messageController.php');
+require_once(__DIR__ . '/userController.php');
 
 class EmblemController {
 
@@ -50,7 +50,7 @@ class EmblemController {
         } else {
             $sql = "DELETE FROM " . CONFIG_TABLE_PREFIX . "emblems WHERE team = '" . $ids . "'";
             DB::query($sql, TRUE);
-            unlink(realpath(dirname(__FILE__)) . '/../images/emblems/' . $ids . '.png');
+            unlink(realpath(__DIR__) . '/../images/emblems/' . $ids . '.png');
             $msg = __('Dein Wappen entsprach nicht den <a href="/regeln.php">Regeln</a> und wurde daher gelöscht. Bitte schaue nochmal in den <a href="/regeln.php">Regeln</a> nach was erlaubt ist und was nicht.');
             MessageController::addOfficialPn(UserController::getIdsByTeamIds($ids), __('Wappen nicht freigegeben'), $msg);
         }
@@ -73,7 +73,7 @@ class EmblemController {
         } else if ($_FILES['emblem']['type'] != 'image/png') {
             return _('Es sind nur png Dateien erlaubt.');
         }
-        $uploaddir = realpath(dirname(__FILE__)) . '/../images/emblems/';
+        $uploaddir = realpath(__DIR__) . '/../images/emblems/';
         $uploadfile = $uploaddir . $ids . '.png';
         move_uploaded_file($_FILES['emblem']['tmp_name'], $uploadfile);
 

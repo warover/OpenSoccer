@@ -1,7 +1,7 @@
 <?php
-include_once(dirname(__FILE__) . '/zz1.php');
-require_once(dirname(__FILE__) . '/utils/database.php');
-include_once(dirname(__FILE__) . '/zz2.php');
+include_once(__DIR__ . '/zz1.php');
+require_once(__DIR__ . '/utils/database.php');
+include_once(__DIR__ . '/zz2.php');
 ?>
 <title><?php echo _('Spielerverwaltung'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
 <?php
@@ -39,10 +39,10 @@ if ($loggedin == 1) {
     $freePlayerSResult = DB::query($freePlayerSSql, false);
     $freePlayersS = mysql_result($freePlayerSResult, 0);
 
-    include_once(dirname(__FILE__) . '/views/admin/playerManagement.html');
-    include_once(dirname(__FILE__) . '/viewModels/admin/playerManagement.php');
+    include_once(__DIR__ . '/views/admin/playerManagement.html');
+    include_once(__DIR__ . '/viewModels/admin/playerManagement.php');
 } else {
     echo '<p>' . _('Du musst angemeldet sein, um diese Seite aufrufen zu können!') . '</p>';
 }
 ?>
-<?php include_once(dirname(__FILE__) . '/zz3.php'); ?>
+<?php include_once(__DIR__ . '/zz3.php'); ?>

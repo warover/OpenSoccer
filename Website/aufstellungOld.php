@@ -386,4 +386,4 @@ echo '</p>';
 <?php } else { ?>
     <p><?php echo _('Du musst angemeldet sein, um diese Seite aufrufen zu können!'); ?></p>
 <?php } ?>
-<?php include_once(dirname(__FILE__).'/zz3.php'); ?>
+<?php include_once(__DIR__.'/zz3.php'); ?>

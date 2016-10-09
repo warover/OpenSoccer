@@ -1,4 +1,4 @@
-<?php include_once(dirname(__FILE__).'/zz1.php'); ?>
+<?php include_once(__DIR__.'/zz1.php'); ?>
 <title><?php echo _('Wertvollste Teams'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
 <style type="text/css">
 <!--
@@ -7,8 +7,8 @@
 }
 -->
 </style>
-<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
-<?php include_once(dirname(__FILE__).'/zzsubnav_statistik.php'); ?>
+<?php include_once(__DIR__.'/zz2.php'); ?>
+<?php include_once(__DIR__.'/zzsubnav_statistik.php'); ?>
 <?php if ($loggedin == 1) { ?>
 <h1><?php echo _('Liga wählen'); ?></h1>
 <form action="" method="get" accept-charset="utf-8">
@@ -88,4 +88,4 @@ if ($temp == FALSE) {
 <h1><?php echo _('Wertvollste Teams'); ?></h1>
 <p><?php echo _('Du musst angemeldet sein, um diese Seite aufrufen zu können!'); ?></p>
 <?php } ?>
-<?php include_once(dirname(__FILE__).'/zz3.php'); ?>
+<?php include_once(__DIR__.'/zz3.php'); ?>

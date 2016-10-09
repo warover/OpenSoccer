@@ -1,9 +1,9 @@
 <?php 
-include_once(dirname(__FILE__).'/zz1.php'); 
-require_once(dirname(__FILE__).'/controller/emblemController.php');
+include_once(__DIR__.'/zz1.php'); 
+require_once(__DIR__.'/controller/emblemController.php');
 ?>
 <title><?php echo _('Nationaler Cup'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
-<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
+<?php include_once(__DIR__.'/zz2.php'); ?>
 <?php if ($loggedin == 1) { ?>
 <h1><?php echo _('Land wählen'); ?></h1>
 <form action="" method="get" accept-charset="utf-8">
@@ -48,7 +48,7 @@ if (file_exists($tmp_dateiname)) {
 			$ersatz_temp = '<strong>'.$cookie_teamname.'</strong>';
 			echo str_replace($cookie_teamname, $ersatz_temp, $tmp_liga_cache);
             $temp = TRUE;
-            include_once(dirname(__FILE__).'/zz3.php');
+            include_once(__DIR__.'/zz3.php');
             exit;
 		}
 	}
@@ -139,4 +139,4 @@ echo str_replace($cookie_teamname, $ersatz_temp, $tmp_liga_cache);
 <h1><?php echo _('Nationaler Cup'); ?></h1>
 <p><?php echo _('Du musst angemeldet sein, um diese Seite aufrufen zu können!'); ?></p>
 <?php } ?>
-<?php include_once(dirname(__FILE__).'/zz3.php'); ?>
+<?php include_once(__DIR__.'/zz3.php'); ?>

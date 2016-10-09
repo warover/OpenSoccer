@@ -1,7 +1,7 @@
-<?php include_once(dirname(__FILE__).'/zz1.php'); ?>
+<?php include_once(__DIR__.'/zz1.php'); ?>
 <title><?php echo _('Geschichte'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
-<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
-<?php include_once(dirname(__FILE__).'/zzsubnav_statistik.php'); ?>
+<?php include_once(__DIR__.'/zz2.php'); ?>
+<?php include_once(__DIR__.'/zzsubnav_statistik.php'); ?>
 <?php if ($loggedin == 1) { ?>
 <h1><?php echo _('Tabelle wählen'); ?></h1>
 <?php
@@ -81,4 +81,4 @@ while ($sql3 = mysql_fetch_assoc($sql2)) {
 <h1><?php echo _('Geschichte'); ?></h1>
 <p><?php echo _('Du musst angemeldet sein, um diese Seite aufrufen zu können!'); ?></p>
 <?php } ?>
-<?php include_once(dirname(__FILE__).'/zz3.php'); ?>
+<?php include_once(__DIR__.'/zz3.php'); ?>

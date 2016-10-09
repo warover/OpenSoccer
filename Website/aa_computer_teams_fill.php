@@ -1,10 +1,10 @@
 <?php
 
 if (!isset($_GET['mode'])) {
-    include_once(dirname(__FILE__).'/zzserver.php');
+    include_once(__DIR__.'/zzserver.php');
 }
-require_once(dirname(__FILE__).'/utils/database.php');
-require_once(dirname(__FILE__).'/utils/utils.php');
+require_once(__DIR__.'/utils/database.php');
+require_once(__DIR__.'/utils/utils.php');
 
 $in14days = Utils::endOfDay(Utils::getTimestamp('+14 days'));
 

@@ -5,7 +5,7 @@ class Log {
     public static function logToErrFile($err) {
         $date = date('Y-m-d');
         $time = date('H:i:s');
-        $file = dirname(__FILE__) . '/'.$date.'.txt';
+        $file = __DIR__ . '/'.$date.'.txt';
         
         $logTxt = '['.$time.'] >> '.$err;
         

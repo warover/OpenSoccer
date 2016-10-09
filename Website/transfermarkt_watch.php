@@ -1,7 +1,7 @@
 <?php
 if (!isset($_GET['id'])) { exit; }
-include_once(dirname(__FILE__).'/zzserver.php');
-include_once(dirname(__FILE__).'/zzcookie.php');
+include_once(__DIR__.'/zzserver.php');
+include_once(__DIR__.'/zzcookie.php');
 if ($loggedin == 0) { exit; }
 $spieler = mysql_real_escape_string(trim(strip_tags($_GET['id'])));
 if ($cookie_id != CONFIG_DEMO_USER) {

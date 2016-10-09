@@ -1,6 +1,6 @@
 <?php 
-include_once(dirname(__FILE__).'/zz1.php');
-require_once(dirname(__FILE__).'/controller/emblemController.php');
+include_once(__DIR__.'/zz1.php');
+require_once(__DIR__.'/controller/emblemController.php');
 ?>
 <title><?php echo _('Internationaler Pokal'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
 <?php
@@ -26,7 +26,7 @@ if (isset($laender[$cookie_liga])) {
 	echo '</style>';
 }
 ?>
-<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
+<?php include_once(__DIR__.'/zz2.php'); ?>
 <?php if ($loggedin == 1) { ?>
 <?php
 setTaskDone('pokal_standings');
@@ -39,7 +39,7 @@ if (isset($_POST['nachricht']) && $cookie_id != CONFIG_DEMO_USER) {
 		$chatSperreBis = $sql3['MAX(chatSperre)'];
 		if ($chatSperreBis > 0 && $chatSperreBis > time()) {
 			addInfoBox(__('Du bist noch bis zum %1$d für die Kommunikation im Spiel gesperrt. Wenn Dir unklar ist warum, frage bitte das %2$s', date('d.m.Y H:i', $chatSperreBis), '<a class="inText" href="/wio.php">'._('Support-Team.').'</a>'));
-			include_once(dirname(__FILE__).'/zz3.php');
+			include_once(__DIR__.'/zz3.php');
 			exit;
 		}
 	}
@@ -87,7 +87,7 @@ while ($sql3 = mysql_fetch_assoc($sql2)) {
 }
 ?>			
 			<?php
-            include_once(dirname(__FILE__).'/zz3.php');
+            include_once(__DIR__.'/zz3.php');
             exit;
 		}
 	}
@@ -228,4 +228,4 @@ while ($sql3 = mysql_fetch_assoc($sql2)) {
 <h1><?php echo _('Internationaler Pokal'); ?></h1>
 <p><?php echo _('Du musst angemeldet sein, um diese Seite aufrufen zu können!'); ?></p>
 <?php } ?>
-<?php include_once(dirname(__FILE__).'/zz3.php'); ?>
+<?php include_once(__DIR__.'/zz3.php'); ?>

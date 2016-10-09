@@ -1,9 +1,9 @@
 <?php
-include_once(dirname(__FILE__).'/zz1.php');
-require_once(dirname(__FILE__).'/utils/database.php');
-require_once(dirname(__FILE__).'/controller/teamController.php');
-require_once(dirname(__FILE__).'/controller/ligaController.php');
-include_once(dirname(__FILE__).'/zz2.php');
+include_once(__DIR__.'/zz1.php');
+require_once(__DIR__.'/utils/database.php');
+require_once(__DIR__.'/controller/teamController.php');
+require_once(__DIR__.'/controller/ligaController.php');
+include_once(__DIR__.'/zz2.php');
 ?>
 <title><?php echo _('Team Monitoring'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
 
@@ -40,4 +40,4 @@ if ($loggedin == 1) {
     echo '<p>' . _('Du musst angemeldet sein, um diese Seite aufrufen zu können!') . '</p>';
 }
 ?>
-<?php include_once(dirname(__FILE__).'/zz3.php'); ?>
+<?php include_once(__DIR__.'/zz3.php'); ?>

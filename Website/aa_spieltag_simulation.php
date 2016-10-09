@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($_GET['mode'])) {
-    include_once(dirname(__FILE__).'/zzserver.php');
+    include_once(__DIR__.'/zzserver.php');
 }
 set_time_limit(0);
 

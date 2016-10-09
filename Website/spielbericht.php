@@ -1,6 +1,6 @@
 <?php if (!isset($_GET['id'])) { exit; } ?>
 <?php 
-include_once(dirname(__FILE__).'/zz1.php'); 
+include_once(__DIR__.'/zz1.php'); 
 require_once 'controller/emblemController.php';
 ?>
 <?php
@@ -112,7 +112,7 @@ div.matchReport span.teamRight {
 }
 -->
 </style>
-<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
+<?php include_once(__DIR__.'/zz2.php'); ?>
 <?php
 if ($live_scoring_meldung != '') {
     $scoreStr = _('LIVE');
@@ -358,4 +358,4 @@ if (isset($selectedStadionPhoto)) {
 	}
 }
 ?>
-<?php include_once(dirname(__FILE__).'/zz3.php'); ?>
+<?php include_once(__DIR__.'/zz3.php'); ?>

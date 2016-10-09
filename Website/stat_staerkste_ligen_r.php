@@ -1,4 +1,4 @@
-<?php include_once(dirname(__FILE__).'/zz1.php'); ?>
+<?php include_once(__DIR__.'/zz1.php'); ?>
 <title><?php echo _('Stärkste Ligen - RKP'); ?> - <?php echo CONFIG_SITE_NAME; ?></title>
 <style type="text/css">
 <!--
@@ -7,8 +7,8 @@
 }
 -->
 </style>
-<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
-<?php include_once(dirname(__FILE__).'/zzsubnav_statistik.php'); ?>
+<?php include_once(__DIR__.'/zz2.php'); ?>
+<?php include_once(__DIR__.'/zzsubnav_statistik.php'); ?>
 <h1><?php echo _('Stärkste Ligen - RKP'); ?></h1>
 <?php if ($loggedin == 1) { ?>
 <p><?php echo _('Jedes Team besitzt eine Punktzahl fürs Ranking, RKP genannt. Am Durchschnitt dieser RKP-Zahlen innerhalb der einzelnen Ligen wird hier deren Stärke gemessen.'); ?></p>
@@ -40,4 +40,4 @@ while ($sql3 = mysql_fetch_assoc($sql2)) {
 <?php } else { ?>
 <p><?php echo _('Du musst angemeldet sein, um diese Seite aufrufen zu können!'); ?></p>
 <?php } ?>
-<?php include_once(dirname(__FILE__).'/zz3.php'); ?>
+<?php include_once(__DIR__.'/zz3.php'); ?>

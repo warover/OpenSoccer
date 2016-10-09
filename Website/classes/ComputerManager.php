@@ -1,7 +1,7 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../utils/database.php');
-require_once(dirname(__FILE__) . '/../utils/utils.php');
+require_once(__DIR__ . '/../utils/database.php');
+require_once(__DIR__ . '/../utils/utils.php');
 
 /**
  * Description of ComputerManager

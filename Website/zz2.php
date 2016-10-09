@@ -7,8 +7,8 @@
 </script>
 </head>
 <?php
-require_once(dirname(__FILE__).'/controller/emblemController.php');
-require_once(dirname(__FILE__).'/controller/supportController.php');
+require_once(__DIR__.'/controller/emblemController.php');
+require_once(__DIR__.'/controller/supportController.php');
 if (isset($_GET['via_android'])) {
     if ($_GET['via_android'] == 1) {
         $_SESSION['via_android'] = 1;

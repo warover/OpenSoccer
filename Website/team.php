@@ -1,6 +1,6 @@
 <?php 
-include_once(dirname(__FILE__).'/zz1.php'); 
-require_once(dirname(__FILE__).'/controller/emblemController.php');
+include_once(__DIR__.'/zz1.php'); 
+require_once(__DIR__.'/controller/emblemController.php');
 ?>
 <?php
 if (!isset($_GET['id'])) { exit; }
@@ -27,7 +27,7 @@ $sql3 = mysql_fetch_assoc($sql2);
 }
 -->
 </style>
-<?php include_once(dirname(__FILE__).'/zz2.php'); ?>
+<?php include_once(__DIR__.'/zz2.php'); ?>
 <h1><?php echo _('Team:').' '.$sql3['name']; ?></h1>
 <img class="emblem-big" src="/images/emblems/<?php echo EmblemController::getEmblemByTeamIds($clearid); ?>" />
 	<?php
@@ -189,4 +189,4 @@ echo '<tr class="odd"><td colspan="6">'.__('Team-Marktwert: %s €', number_form
 <p><strong><?php echo _('Überschriften:').'</strong> '._('MT: Mannschaftsteil, TS: Transferstatus, AL: Alter, FR: Frische'); ?></p>
 <p><strong><?php echo _('Mannschaftsteile:').'</strong> '._('T: Torwart, A: Abwehr, M: Mittelfeld, S: Sturm'); ?></p>
 <p><strong><?php echo _('Durchgestrichen:').'</strong> '._('verletzte oder gesperrte Spieler'); ?></p>
-<?php include_once(dirname(__FILE__).'/zz3.php'); ?>
+<?php include_once(__DIR__.'/zz3.php'); ?>

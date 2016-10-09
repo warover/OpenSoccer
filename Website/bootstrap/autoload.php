@@ -1,28 +1,28 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../utils/database.php');
-require_once dirname(__FILE__) . '/../Logger/Log.php';
+require_once(__DIR__ . '/../utils/database.php');
+require_once __DIR__ . '/../Logger/Log.php';
 
 spl_autoload_register("autoloadController");
 spl_autoload_register("autoloadRouter");
 spl_autoload_register("autoloadHelpers");
 
 function autoloadController($className) {
-    $filename = dirname(__FILE__) . "/../controller/" . $className . ".php";
+    $filename = __DIR__ . "/../controller/" . $className . ".php";
     if (is_readable($filename)) {
         require_once $filename;
     }
 }
 
 function autoloadRouter($className) {
-    $filename = dirname(__FILE__) . "/../Router/" . $className . ".php";
+    $filename = __DIR__ . "/../Router/" . $className . ".php";
     if (is_readable($filename)) {
         require_once $filename;
     }
 }
 
 function autoloadHelpers($className) {
-    $filename = dirname(__FILE__) . "/../Helpers/" . $className . ".php";
+    $filename = __DIR__ . "/../Helpers/" . $className . ".php";
     if (is_readable($filename)) {
         require_once $filename;
     }

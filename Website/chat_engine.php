@@ -1,5 +1,5 @@
-<?php include_once(dirname(__FILE__).'/zzserver.php'); ?>
-<?php include_once(dirname(__FILE__).'/zzcookie.php'); ?>
+<?php include_once(__DIR__.'/zzserver.php'); ?>
+<?php include_once(__DIR__.'/zzcookie.php'); ?>
 
 <?php if ($loggedin == 1) { ?>
 
