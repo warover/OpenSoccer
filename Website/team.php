@@ -98,7 +98,7 @@ else {
 	$mdsSiege4 = 0;
 }
 // TROPHAEEN-RAUM ANFANG
-if ($sql3['meisterschaften'] > 0 OR $sql3['pokalsiege'] > 0 OR $sql3['cupsiege'] > 0) {
+if ($sql3['meisterschaften'] > 0 OR $sql3['pokalsiege'] > 0 OR $sql3['cupsiege'] > 0 OR $sql3['cupsiege'] > 0 OR $mdsSiege4 > 0) {
 	echo '<h1>'._('Trophäen-Raum').'</h1><p>';
 	if ($sql3['meisterschaften'] > 0) {
 		for ($i = 0; $i < $sql3['meisterschaften']; $i++) {
