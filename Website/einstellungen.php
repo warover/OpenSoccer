@@ -3,6 +3,7 @@
 <?php include_once(__DIR__.'/zz2.php'); ?>
 <?php if ($loggedin == 1) { ?>
 <?php
+require_once(__DIR.'/controller/teamController.php');
 if (isset($_POST['accDelPlus']) && isset($_POST['accDelMinus']) && $cookie_id != CONFIG_DEMO_USER) {
 	$accDelPlus = mysql_real_escape_string(trim(strip_tags($_POST['accDelPlus'])));
 	$accDelMinus = mysql_real_escape_string(trim(strip_tags($_POST['accDelMinus'])));
@@ -40,6 +41,7 @@ if (isset($_POST['accDelPlus']) && isset($_POST['accDelMinus']) && $cookie_id !=
 		$wielange1 = "INSERT INTO ".$prefix."abmeldungen (zeit, username, liga, dabei, ip) VALUES (".time().", '".$cookie_username."', '".$cookie_liga."', ".intval(time()-$howLong3['regdate']).", '".getUserIP()."')";
 		$wielange2 = mysql_query($wielange1);
 	}
+        TeamController::resetTeam($cookie_team, $cookie_liga);
 	header('Location: /logout.php');
 	exit;
 }
