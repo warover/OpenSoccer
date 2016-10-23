@@ -52,6 +52,8 @@ Online Soccer Manager
  * [Website/aa_tabellen_berechnen.php](Website/aa_tabellen_berechnen.php): every 2 minutes; at hours 16-17
  * [Website/aa_team_staerke_berechnen.php](Website/aa_team_staerke_berechnen.php): every 5 minutes
  * [Website/aa_tv_einnahmen.php](Website/aa_tv_einnahmen.php): every 6 hours
+ * [Website/aa_computer_moinitoring.php](Website/aa_computer_moinitoring): every day; at 23:53
+ * [Website/aa_fill_transfer.php](Website/aa_fill_transfer.php): every day; at 23:54
 
 ## Contributing
 
