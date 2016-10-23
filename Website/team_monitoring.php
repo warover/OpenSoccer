@@ -26,14 +26,14 @@ if ($loggedin == 1) {
 
     foreach ($monitoredTeams as $teamIds) {
         echo '<h1>' . TeamController::getTeamNameByIds($teamIds) . " - " . LigaController::getLigaNameByTeamIds($teamIds) . '</h1>';
-        echo '<div id="'.$teamIds.'"></div>';
+        echo '<div id="'.$teamIds.'"></div><div id="'.$teamIds.'Status"></div>';
         $dataSql = "SELECT * FROM ". CONFIG_TABLE_PREFIX."computer_monitoring WHERE team = '".$teamIds."' ORDER BY date";
         $result = DB::query($dataSql, false);
-        $data = 'Date, Anzahl Spieler, Anzahl Spieler T, Anzahl Spieler S, Anzahl Spieler M, Anzahl Spieler A, Avg Talent, Avg Staerke, Avg Aufstellung\n';
+        $data = 'Date, Anzahl Spieler T, Anzahl Spieler A, Anzahl Spieler M, Anzahl Spieler S, Avg Talent, Avg Staerke, Avg Aufstellung\n';
         while($line = mysql_fetch_object($result)) {
-            $data .= $line->date.','.$line->anz_player.','.$line->anz_player_t.','.$line->anz_player_s.','.$line->anz_player_m.','.$line->anz_player_a.','.$line->avg_talent.','.$line->avg_staerke.','.$line->avg_aufstellung.'\n';
+            $data .= $line->date.','.$line->anz_player_t.','.$line->anz_player_a.','.$line->anz_player_m.','.$line->anz_player_s.','.$line->avg_talent.','.$line->avg_staerke.','.$line->avg_aufstellung.'\n';
         }
-        echo '<script type="text/javascript">new Dygraph(document.getElementById("'.$teamIds.'"),"'.$data.'", {});</script>';
+        echo '<script type="text/javascript">new Dygraph(document.getElementById("'.$teamIds.'"),"'.$data.'", {legend: "always", labelsDiv: document.getElementById("'.$teamIds.'Status")});</script>';
     }
 } else {
 
