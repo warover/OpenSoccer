@@ -1,5 +1,8 @@
-<div id="showInfoBox99" class="showInfoBox" style="z-index:99">
+<div id="showInfoBox99" class="showInfoBox" style="z-index:99;">
     <span data-bind="text: 'Aufgestellte Spieler: ' + anzPlayer() + '/11, Stärke: ' + aufstellungsstaerke()"></span>
+</div>
+<div id="infoBoxMp" class="showInfoBox" style="z-index:100;display: none;">
+    <span>Herzlichen Glückwunsch, Du hast gerade einen weiteren Teil deiner <a class="inText" href="/managerPruefung.php">Manager-Prüfung</a> abgeschlossen!</span>
 </div>
 <p style="text-align:right; margin-right: 5px;">
     <span class="pagenava" data-bind="click: function() {changeType('Liga');}, css: {aktiv: aufstellungsType() === 'Liga'}">Liga</span>

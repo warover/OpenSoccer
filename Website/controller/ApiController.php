@@ -1,20 +1,31 @@
 <?php
 
+require_once(__DIR__ . "/../utils/utils.php");
+
 class ApiController {
 
     public function updateAufstellung() {
+        $result = new stdClass();
         $type = $_POST['type'];
         $data = $_POST['data'];
         if (!$this->validateOncePerPosition($type, $data)) {
-            echo 'false';
+            $result->err = true;
+            echo json_encode($result);
             return;
         }
         $this->updateAufstellungInDatabase($type, $data);
-        echo 'true';
+        if ($type == 'Cup') {
+            if (Utils::setTaskDone('lineup_cup')) {
+                $result->taskDone = true;
+            }
+        }
+        $result->err = false;
+        echo json_encode($result);
         return;
     }
 
     public function takeAufstellung() {
+        $result = new stdClass();
         $from = $_POST['from'];
         $to = $_POST['to'];
         $team = $_SESSION['team'];
@@ -22,7 +33,13 @@ class ApiController {
         $sql = "UPDATE " . CONFIG_TABLE_PREFIX . "spieler SET startelf_" . $to . " = startelf_" . $from . " WHERE team = '" . $team . "'";
         DB::query($sql, false);
         $this->createAufstellungsLog($to, $team);
-        echo 'true';
+        if ($to == 'Cup') {
+            if (Utils::setTaskDone('lineup_cup')) {
+                $result->taskDone = true;
+            }
+        }
+        $result->err = false;
+        echo json_encode($result);
         return;
     }
 

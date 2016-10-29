@@ -85,8 +85,9 @@
                 type: "POST",
                 dataType: 'json'
             }).done(function (result) {
-                if (result === true) {
+                if (result.err === false) {
                     $.notify("Aufstellung gespeichert", "success");
+                    if(result.taskDone) $('#infoBoxMp').show();
                 } else {
                     $.notify("Es ist ein Fehler aufgetreten.", "error");
                 }
@@ -105,8 +106,9 @@
                     type: "POST",
                     dataType: 'json'
                 }).done(function (result) {
-                    if (result === true) {
+                    if (result.err === false) {
                         $.notify("Aufstellung gespeichert", "success");
+                        if(result.taskDone) $('#infoBoxMp').show();
                     } else {
                         $.notify("Es ist ein Fehler aufgetreten.", "error");
                     }
